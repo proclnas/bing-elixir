@@ -1,0 +1,7 @@
+%{
+  "floki": {:hex, :floki, "0.21.0", "0c0191a6dbc559300bac232f716c55fb5738d45ae846b3141b19e5f5741c1907", [:mix], [{:html_entities, "~> 0.4.0", [hex: :html_entities, repo: "hexpm", optional: false]}, {:mochiweb, "~> 2.15", [hex: :mochiweb, repo: "hexpm", optional: false]}], "hexpm"},
+  "html_entities": {:hex, :html_entities, "0.4.0", "f2fee876858cf6aaa9db608820a3209e45a087c5177332799592142b50e89a6b", [:mix], [], "hexpm"},
+  "httpotion": {:hex, :httpotion, "3.1.2", "50e3e559c2ffe8c8908c97e4ffb01efc1c18e8547cc7ce5dd173c9cf0a573a3b", [:mix], [{:ibrowse, "== 4.4.0", [hex: :ibrowse, repo: "hexpm", optional: false]}], "hexpm"},
+  "ibrowse": {:hex, :ibrowse, "4.4.0", "2d923325efe0d2cb09b9c6a047b2835a5eda69d8a47ed6ff8bc03628b764e991", [:rebar3], [], "hexpm"},
+  "mochiweb": {:hex, :mochiweb, "2.18.0", "eb55f1db3e6e960fac4e6db4e2db9ec3602cc9f30b86cd1481d56545c3145d2e", [:rebar3], [], "hexpm"},
+}
