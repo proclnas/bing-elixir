@@ -13,4 +13,4 @@
 `$ mix run`
 
 ### Src
-[BingElixir code](lib/app/hello.ex)
+[BingElixir code](lib/app/BingElixir.ex)
