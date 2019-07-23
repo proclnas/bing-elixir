@@ -1,22 +1,25 @@
-defmodule App.Hello do
+defmodule App.BingElixir do
   @limit_page Application.get_env(:app, :limit_page)
   @blacklist ~r/bing|microsoft|search|javascript.+|^\/|^#/
 
-  def start(file_name \\ "words.txt") do
-    case File.exists? file_name do
-      false -> exit("File #{file_name} not found")
-      _ -> process(file_name)
-    end
+  def start(_type, _args) do
+    IO.puts "Bing Elixir"
+    process()
   end
 
-  def process(file_name) do
+  def process(file_name \\ "words.txt") do
+    case File.exists? file_name do
+      false -> exit "File #{file_name} not found"
+      _ -> IO.puts "Starting..."
+    end
+
     File.stream!(file_name)
     |> Enum.map(&String.trim/1)
     |> Enum.map(&bing_search/1)
   end
 
   def bing_search(word, ptr \\ 1) do
-    IO.puts("[#{ptr}/#{@limit_page}] Searching: #{word}")
+    IO.puts "[#{ptr}/#{@limit_page}] Searching: #{word}"
 
     HTTPotion.get("http://www.bing.com/search?q=#{word}&count=50&first=#{ptr}")
     |> process_response
@@ -45,8 +48,8 @@ defmodule App.Hello do
 
   def save_buf(content, output \\ "output.txt") do
     case File.write(output, "#{content}\n", [:append]) do
-      :ok -> IO.puts("[+] Uri saved to #{output}")
-      _ -> IO.puts("[-] Error on save uri")
+      :ok -> IO.puts "[+] Uri saved to #{output}"
+      _ -> IO.puts "[-] Error on save uri"
     end
   end
 end

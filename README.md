@@ -1,21 +1,16 @@
 # App
 
-**TODO: Add description**
+**Bing search poc - Elixir**
 
-## Installation
+## Requirements
+- Elixir - Erlang/OTP
+- Mix
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `app` to your list of dependencies in `mix.exs`:
+## Install deps
+`$ mix deps.get`
 
-```elixir
-def deps do
-  [
-    {:app, "~> 0.1.0"}
-  ]
-end
-```
+## Usage
+`$ mix run`
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/app](https://hexdocs.pm/app).
-
+### Src
+[BingElixir code](lib/app/hello.ex)
