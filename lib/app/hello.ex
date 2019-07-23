@@ -3,6 +3,13 @@ defmodule App.Hello do
   @blacklist ~r/bing|microsoft|search|javascript.+|^\/|^#/
 
   def start(file_name \\ "words.txt") do
+    case File.exists? file_name do
+      false -> exit("File #{file_name} not found")
+      _ -> process(file_name)
+    end
+  end
+
+  def process(file_name) do
     File.stream!(file_name)
     |> Enum.map(&String.trim/1)
     |> Enum.map(&bing_search/1)
